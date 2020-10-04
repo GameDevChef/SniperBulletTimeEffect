@@ -44,9 +44,21 @@ public class PlayerMovementController : MonoBehaviour
 
 
 	private void FixedUpdate()
+	{		
+		HandleTranslation();		
+	}
+
+	private void HandleTranslation()
+	{
+		var moveVector = new Vector3(horizontalInput, 0f, verticalInput);
+		var worldMoveVector = transform.TransformDirection(moveVector);
+		worldMoveVector = new Vector3(worldMoveVector.x, 0f, worldMoveVector.z);
+		rb.AddForce(worldMoveVector.normalized * Time.deltaTime * moveSpeed, ForceMode.Force);
+	}
+
+	private void Update()
 	{
 		GetInput();
-		HandleTranslation();
 		HandleRotation();
 	}
 
@@ -56,16 +68,9 @@ public class PlayerMovementController : MonoBehaviour
 		verticalInput = Input.GetAxisRaw(VERTICAL);
 		mouseInputX = Input.GetAxis(MOUSE_X);
 		mouseInputY = Input.GetAxis(MOUSE_Y);
-
 		mouseSensivity = minMouseSensivity + scope.GetZoomPrc() * Mathf.Abs(minMouseSensivity - maxMouseSensivity);
 	}
-	private void HandleTranslation()
-	{
-		var moveVector = new Vector3(horizontalInput, 0f, verticalInput);
-		var worldMoveVector = transform.TransformDirection(moveVector);
-		worldMoveVector = new Vector3(worldMoveVector.x, 0f, worldMoveVector.z);
-		rb.AddForce(worldMoveVector.normalized * Time.deltaTime * moveSpeed, ForceMode.Force);
-	}
+	
 	private void HandleRotation()
 	{
 		float yaw = mouseInputX * Time.deltaTime * rotationSpeed * mouseSensivity;
