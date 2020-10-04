@@ -18,11 +18,16 @@ public class EnemyController : MonoBehaviour
 
     public void OnEnemyShot(Vector3 shootDirection, Rigidbody shotRB)
     {
-        animationController.DisableAnimator();
+        StopAnimation();
         ragdollController.EnableRagdoll();
         if (shotRB)
         {
             shotRB.AddForce(shootDirection.normalized * 100f, ForceMode.Impulse);
         }            
+    }
+
+    public void StopAnimation()
+    {
+        animationController.DisableAnimator();
     }
 }

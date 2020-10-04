@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Transform hitTransform;
     [SerializeField] private Transform visualTransform;
+
+    private Transform hitTransform;
     private bool isEnemyShot;
     private float shootingForce;
     private Vector3 direction;
+    private Vector3 hitPoint;
 
-
-    public void Launch(float shootingForce, Vector3 direction, Transform hitTransform)
+    public void Launch(float shootingForce, Transform hitTransform, Vector3 hitPoint)
     {
-        this.direction = direction.normalized;
+        direction = (hitPoint - transform.position).normalized;
         isEnemyShot = false;
         this.hitTransform = hitTransform;
         this.shootingForce = shootingForce;
+        this.hitPoint = hitPoint;
     }
 
     private void Update()
@@ -34,8 +36,8 @@ public class Bullet : MonoBehaviour
 
     private void CheckDistanceToEnemy()
     {
-        float distance = Vector3.Distance(transform.position, hitTransform.position);
-        if(distance <= 0.5 && !isEnemyShot)
+        float distance = Vector3.Distance(transform.position, hitPoint);
+        if(distance <= 0.1 && !isEnemyShot)
         {
             EnemyController enemy = hitTransform.GetComponentInParent<EnemyController>();
             if (enemy)
@@ -50,15 +52,12 @@ public class Bullet : MonoBehaviour
         visualTransform.Rotate(Vector3.forward, 1200 * Time.deltaTime, Space.Self);
     }
 
-
-
     private void ShootEnemy(Transform hitTransform, EnemyController enemy)
     {
         isEnemyShot = true;
         Rigidbody shotRB = hitTransform.GetComponent<Rigidbody>();
         enemy.OnEnemyShot(transform.forward, shotRB);
     }
-
 
     public float GetBulletSpeed()
     {

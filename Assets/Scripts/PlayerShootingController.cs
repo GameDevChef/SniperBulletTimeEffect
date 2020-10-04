@@ -40,8 +40,9 @@ public class PlayerShootingController : MonoBehaviour
             {
                 if (direction.magnitude >= minDistanceToPlayAnimation)
                 {
+                    controller.StopAnimation();
                     Bullet bulletInstance = Instantiate(bulletPrefab, bulletSpawnTransform.position, bulletSpawnTransform.rotation);
-                    bulletInstance.Launch(shootingForce, direction, hit.collider.transform);
+                    bulletInstance.Launch(shootingForce, hit.collider.transform, hit.point);
                     bulletTimeController.StartSequence(bulletInstance, hit.point);
                 }
                 else
