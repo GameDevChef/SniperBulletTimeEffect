@@ -3064,7 +3064,7 @@ MonoBehaviour:
     avaliableDolly: {fileID: 5075031780560834203, guid: 70e3165dac0f1be4082a92f2e64864ec,
       type: 3}
   shootingController: {fileID: 904319585}
-  distanceToChangeCamera: 0.3
+  distanceToChangeCamera: 0.6
   finishingCameraDuration: 4.5
 --- !u!4 &2034419963
 Transform:

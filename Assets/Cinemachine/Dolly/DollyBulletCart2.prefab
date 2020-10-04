@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 8527613666560117584}
   - component: {fileID: 8527613666560117585}
   - component: {fileID: 5075031780560834203}
-  - component: {fileID: 6398997669217397639}
   m_Layer: 0
   m_Name: DollyBulletCart2
   m_TagString: Untagged
@@ -153,24 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: 1
-  followTargetWithDOF: 0
---- !u!114 &6398997669217397639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527613666560117586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FocusTracksTarget: 0
-  m_FocusTracking: 1
-  m_FocusTarget: {fileID: 0}
-  m_FocusOffset: 0
-  m_Profile: {fileID: 11400000, guid: bbc2b291569559449874cdd0a0415976, type: 2}
 --- !u!1 &8527613667117681551
 GameObject:
   m_ObjectHideFlags: 0
