@@ -8,7 +8,8 @@ public class CinemachineBulletPathController : CinemachinePathController {
 
     public override bool CheckIfPathISClear(Transform target, float distance, Quaternion orientation)
     {
-        if (Physics.BoxCast(target.TransformPoint(boxCollider.center), boxCollider.size / 2f, target.forward, out RaycastHit hit,
+        if (Physics.BoxCast(target.TransformPoint(boxCollider.center), 
+            boxCollider.size / 2f, target.forward, out RaycastHit hit,
            orientation, distance, ~mask))
         {
             Debug.LogError(hit.collider.gameObject.name);

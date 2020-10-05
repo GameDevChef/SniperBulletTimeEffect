@@ -6,7 +6,6 @@ using UnityEngine;
 public class RagdollController : MonoBehaviour
 {
     private Rigidbody[] _rigidbodies;
-
     private Rigidbody[] rigidbodies
     {
         get
@@ -16,12 +15,10 @@ public class RagdollController : MonoBehaviour
             return _rigidbodies;
         }       
     }
-
     private void Awake()
     {
         DisableRagdoll();
     }
-
     private void DisableRagdoll()
     {
         foreach (var rb in rigidbodies)

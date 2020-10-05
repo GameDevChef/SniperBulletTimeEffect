@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-
 [RequireComponent(typeof(TimeScaleController))]
 public class BulletTimeController : MonoBehaviour
 {
@@ -64,17 +63,6 @@ public class BulletTimeController : MonoBehaviour
 		dollyInstance.InitDolly(trackInstance, activeBullet.transform, speed);
 	}
 
-	private float CalculateDollySpeed()
-	{
-		if (trackInstance == null || activeBullet == null)
-			return 0f;
-
-		float distanceToTarget = Vector3.Distance(activeBullet.transform.position, targetPosition);
-		float speed = activeBullet.GetBulletSpeed();
-		float pathDistance = trackInstance.PathLength;
-		return pathDistance * speed / distanceToTarget;
-	}
-
 	private void CreateDolly(TargetTrackingSetup setup)
 	{
 		var selectedDolly = setup.avaliableDolly;
@@ -86,6 +74,17 @@ public class BulletTimeController : MonoBehaviour
 		trackInstance = Instantiate(selectedPath.path, bulletTransform);
 		trackInstance.transform.localPosition = selectedPath.transform.position;
 		trackInstance.transform.localRotation = selectedPath.transform.rotation;
+	}
+
+	private float CalculateDollySpeed()
+	{
+		if (trackInstance == null || activeBullet == null)
+			return 0f;
+
+		float distanceToTarget = Vector3.Distance(activeBullet.transform.position, targetPosition);
+		float speed = activeBullet.GetBulletSpeed();
+		float pathDistance = trackInstance.PathLength;
+		return pathDistance * speed / distanceToTarget;
 	}
 
 
