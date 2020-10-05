@@ -151,7 +151,6 @@ Transform:
   m_Children:
   - {fileID: 163019489}
   - {fileID: 710835987}
-  - {fileID: 904319583}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -796,7 +795,7 @@ Transform:
   - {fileID: 999973590}
   - {fileID: 1788145410}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &298199149 stripped
 Transform:
@@ -1598,12 +1597,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904319581}
   m_LocalRotation: {x: -0, y: 0.8410862, z: -0, w: 0.5409012}
-  m_LocalPosition: {x: -71.7827, y: 24.28794, z: 38.540207}
+  m_LocalPosition: {x: -44.900005, y: 14.92, z: 38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1076979108}
-  m_Father: {fileID: 95248276}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 114.51, z: 0}
 --- !u!114 &904319584
 MonoBehaviour:
@@ -3192,7 +3191,7 @@ MonoBehaviour:
       type: 3}
     avaliableDolly: {fileID: 5075031780560834203, guid: 70e3165dac0f1be4082a92f2e64864ec,
       type: 3}
-  shootingController: {fileID: 0}
+  shootingController: {fileID: 904319585}
   distanceToChangeCamera: 0.8
   finishingCameraDuration: 4.5
 --- !u!4 &2034419963
