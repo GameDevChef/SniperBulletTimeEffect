@@ -13,7 +13,7 @@ public class BulletTimeController : MonoBehaviour
 	public class TargetTrackingSetup
 	{
 		public CinemachinePathController avaliableTrack;
-		public CameraDollyController avaliableDolly;
+		public CameraCartController avaliableDolly;
 	}
 
 	[Serializable]
@@ -33,7 +33,7 @@ public class BulletTimeController : MonoBehaviour
 
 	private TimeScaleController timeScaleController;
 	private CinemachineSmoothPath trackInstance;
-	private CameraDollyController dollyInstance;
+	private CameraCartController dollyInstance;
 	private Bullet activeBullet;
 	private Vector3 targetPosition;
 	private List<TargetTrackingSetup> clearTracks = new List<TargetTrackingSetup>();
