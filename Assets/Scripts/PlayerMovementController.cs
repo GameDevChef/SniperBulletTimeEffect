@@ -56,11 +56,7 @@ public class PlayerMovementController : MonoBehaviour
 		rb.AddForce(worldMoveVector.normalized * Time.deltaTime * moveSpeed, ForceMode.Force);
 	}
 
-	private void Update()
-	{
-		GetInput();
-		HandleRotation();
-	}
+	
 
 	private void GetInput()
 	{
@@ -70,7 +66,13 @@ public class PlayerMovementController : MonoBehaviour
 		mouseInputY = Input.GetAxis(MOUSE_Y);
 		mouseSensivity = minMouseSensivity + scope.GetZoomPrc() * Mathf.Abs(minMouseSensivity - maxMouseSensivity);
 	}
-	
+
+	private void Update()
+	{
+		GetInput();
+		HandleRotation();
+	}
+
 	private void HandleRotation()
 	{
 		float yaw = mouseInputX * Time.deltaTime * rotationSpeed * mouseSensivity;

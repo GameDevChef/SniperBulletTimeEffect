@@ -151,6 +151,7 @@ Transform:
   m_Children:
   - {fileID: 163019489}
   - {fileID: 710835987}
+  - {fileID: 904319583}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -795,7 +796,7 @@ Transform:
   - {fileID: 999973590}
   - {fileID: 1788145410}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &298199149 stripped
 Transform:
@@ -1567,6 +1568,7 @@ GameObject:
   - component: {fileID: 904319582}
   - component: {fileID: 904319586}
   - component: {fileID: 904319584}
+  - component: {fileID: 904319585}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1595,13 +1597,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904319581}
-  m_LocalRotation: {x: 0, y: 0.8410862, z: 0, w: 0.5409012}
-  m_LocalPosition: {x: -44.9, y: 14.92, z: 38}
+  m_LocalRotation: {x: -0, y: 0.8410862, z: -0, w: 0.5409012}
+  m_LocalPosition: {x: -71.7827, y: 24.28794, z: 38.540207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1076979108}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 95248276}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 114.51, z: 0}
 --- !u!114 &904319584
 MonoBehaviour:
@@ -1622,6 +1624,25 @@ MonoBehaviour:
   minMouseSensivity: 0.1
   maxMouseSensivity: 1
   mouseSensvityChangeRate: 0.1
+--- !u!114 &904319585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904319581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47f38a254875bc4f9e4803fa8dc5de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletTimeController: {fileID: 2034419962}
+  bulletPrefab: {fileID: 4611346767914794529, guid: e3db0549170f6954aa3b8842d34202c9,
+    type: 3}
+  bulletSpawnTransform: {fileID: 351624040}
+  scope: {fileID: 1937654900}
+  shootingForce: 15
+  minDistanceToPlayAnimation: 40
 --- !u!54 &904319586
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2939,7 +2960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2017769654
 GameObject:
   m_ObjectHideFlags: 0
@@ -43359,7 +43380,7 @@ Transform:
   - {fileID: 4179115340254544169}
   - {fileID: 1707396258}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4179115341172275959
 GameObject:
