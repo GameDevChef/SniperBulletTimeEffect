@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 [RequireComponent(typeof(CinemachineDollyCart))]
-public class CameraDollyController : MonoBehaviour
+public class CameraCartController : MonoBehaviour
 {
     [SerializeField] private bool followTarget;
     private CinemachineDollyCart cart;
